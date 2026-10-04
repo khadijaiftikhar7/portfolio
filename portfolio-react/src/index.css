@@ -140,11 +140,15 @@ footer{padding:40px 0 64px;font-size:.78rem;letter-spacing:.06em;text-transform:
 .project-section>p{max-width:44em;color:var(--muted);font-size:1.02rem}
 .project-list{max-width:44em;color:var(--muted);margin:0;padding-left:20px}
 .project-list li{margin-bottom:10px}
-.screenshot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.screenshot-grid{display:grid;grid-template-columns:1fr;gap:24px}
 .screenshot{margin:0;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--rule)}
-.screenshot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--card)}
+.screenshot img{display:block;width:100%;height:auto;background:var(--card)}
 .screenshot figcaption{padding:10px 14px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .screenshot-note{font-size:.78rem!important;margin-top:14px;color:var(--muted)!important}
+
+/* Larger screens: scale up so the page doesn't look zoomed out */
+@media (min-width:1200px){html{font-size:112.5%}.wrap,.navrow{max-width:820px}.project-wrap{max-width:1000px}}
+@media (min-width:1700px){html{font-size:125%}}
 .screenshot-note code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
 .project-links a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
 @media (max-width:640px){.project-page{padding:32px 20px 60px}.back-link{margin-bottom:38px}.screenshot-grid{grid-template-columns:1fr}}
