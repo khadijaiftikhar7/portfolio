@@ -54,7 +54,7 @@ export default function ProjectDetail() {
               </figure>
             ))}
           </div>
-          <p className="screenshot-note">Project screenshots can be added to <code>public/projects/{project.slug}/</code>.</p>
+         
         </section>
 
         <section className="project-section project-links">
