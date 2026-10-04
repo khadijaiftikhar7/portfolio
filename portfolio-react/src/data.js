@@ -46,6 +46,10 @@ export const work = [
       "/projects/nigehban/screenshot-1.png",
       "/projects/nigehban/screenshot-2.png"
     ],
+    captions: [
+  "Admin dashboard: command overview, recent incidents and officer roster",
+  "Crime reports: filterable record list with the edit form"
+],
     tags: ["MongoDB", "Express", "React", "Node", "JWT"],
   },
   {
