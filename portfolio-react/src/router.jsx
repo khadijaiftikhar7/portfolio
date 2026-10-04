@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 
 export function Link({ to, className, children }) {
+  const internal = to.startsWith('/');
+
   function handleClick(event) {
-    if (to.startsWith('/')) {
+    // Let the browser handle ctrl/cmd/shift/middle clicks (open in new tab, etc.)
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    if (internal) {
       event.preventDefault();
       window.history.pushState({}, '', to);
       window.dispatchEvent(new PopStateEvent('popstate'));
@@ -10,7 +14,11 @@ export function Link({ to, className, children }) {
     }
   }
 
-  return <a href={to} className={className} target="_blank" rel="noreferrer">{children}</a>;
+  return internal ? (
+    <a href={to} className={className} onClick={handleClick}>{children}</a>
+  ) : (
+    <a href={to} className={className} target="_blank" rel="noreferrer">{children}</a>
+  );
 }
 
 export function usePath() {
