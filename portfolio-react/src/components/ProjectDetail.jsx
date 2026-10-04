@@ -50,7 +50,7 @@ export default function ProjectDetail() {
             {project.screenshots.map((image, index) => (
               <figure className="screenshot" key={image}>
                 <img src={image} alt={`${project.title} screenshot ${index + 1}`} />
-                <figcaption>Screenshot {index + 1}</figcaption>
+                <figcaption>{project.captions?.[index] ?? `Screenshot ${index + 1}`}</figcaption>
               </figure>
             ))}
           </div>
